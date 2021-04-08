@@ -5,7 +5,13 @@
  */
 package logingit123;
 
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.FlowLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -102,6 +108,25 @@ public class login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPassWordActionPerformed
 
+    public login(String title) {
+        setTitle(title);
+        JPanel pnFlow = new JPanel();
+        pnFlow.setLayout(new FlowLayout());
+        pnFlow.setBackground(Color.PINK);
+        JButton btn1 = new JButton("FlowLayout");
+        JButton btn2 = new JButton("Add cac Control");
+        JButton btn3 = new JButton("Tren 1 dong");
+        JButton btn4 = new JButton("Het cho chua");
+        JButton btn5 = new JButton("Thi xuong 1 dong");
+        pnFlow.add(btn1);
+        pnFlow.add(btn2);
+        pnFlow.add(btn3);
+        pnFlow.add(btn4);
+        pnFlow.add(btn5);
+        Container con = getContentPane();
+        con.add(pnFlow);
+    }
+    
     String username, password;
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
@@ -110,10 +135,17 @@ public class login extends javax.swing.JFrame {
         if (username.equals("admin") && password.equals("admin"))
         {
             JOptionPane.showMessageDialog(this, "Dang nhap thanh cong");
+            login myUI = new login("UI THOI NHE");
+            myUI.setSize(600, 100);
+            myUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            myUI.setLocationRelativeTo(null);
+            myUI.setVisible(true);
+            
         }
         else
         {
             JOptionPane.showMessageDialog(this, "Dang nhap khong thanh cong");
+            
         }
     }//GEN-LAST:event_btnLoginActionPerformed
 
