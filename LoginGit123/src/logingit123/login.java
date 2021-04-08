@@ -5,6 +5,8 @@
  */
 package logingit123;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Chinh
@@ -46,6 +48,11 @@ public class login extends javax.swing.JFrame {
         lblUserName1.setText("Username");
 
         btnLogin.setText("LOGIN");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -94,6 +101,21 @@ public class login extends javax.swing.JFrame {
     private void txtPassWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPassWordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPassWordActionPerformed
+
+    String username, password;
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        // TODO add your handling code here:
+        username = txtUsername1.getText();
+        password = txtPassWord.getText();
+        if (username.equals("admin") && password.equals("admin"))
+        {
+            JOptionPane.showMessageDialog(this, "Dang nhap thanh cong");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "Dang nhap khong thanh cong");
+        }
+    }//GEN-LAST:event_btnLoginActionPerformed
 
     /**
      * @param args the command line arguments
